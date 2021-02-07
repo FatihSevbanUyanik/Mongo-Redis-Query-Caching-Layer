@@ -28,7 +28,7 @@ services:
       - MONGO_HOST=mongodb://mongo-server-test
       - MONGO_PORT=27017
       - SERVER_PORT=8080
-      - CACHE_DURATION=5
+      - CACHE_DURATION=2
     command: ['npm', 'run', 'test']
 
   node-app: 

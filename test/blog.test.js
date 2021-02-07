@@ -1,7 +1,8 @@
-const app = require('../index')
+const {app, server} = require('../index')
 const keys = require('../util/keys')
 const request = require('supertest')
 const mongoose = require('mongoose')
+const redisClient = require('../service/redis')
 const { delay } = require('../util/utils')
 
 const Blog = mongoose.model('Blog')
@@ -10,6 +11,9 @@ jest.setTimeout(30000);
 
 afterAll(async () => {
     await Blog.deleteMany({})
+    redisClient.quit()
+    mongoose.connection.close()
+    server.close()
 })
   
 

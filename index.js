@@ -52,9 +52,9 @@ process.on('uncaughtException', err => {
 // ============================
 // SERVER CONNECTION
 // ============================
-app.listen(keys.SERVER_PORT, () => {
+const server = app.listen(keys.SERVER_PORT, () => {
     console.log(`Server running on Port ${keys.SERVER_PORT}`)
 })
 
 
-module.exports = app
+module.exports = {app, server}
