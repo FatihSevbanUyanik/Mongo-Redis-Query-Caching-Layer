@@ -1,0 +1,5 @@
+# Query Caching Layer in Mongo and NodeJS
+A simple blog API is provided that uses caching in querying blogs. This repo could be used as a template in implementing this feature in more comprehensive applications. Queries are cached based on user ids and subsequent queries that are within 5 seconds are provided by redis. The main cache layer can  be found in **./services/mongo.js**. In addition, the cache duration is adjustable via the **docker-compose.yaml** file. Tests are provided that illustrates the queries are provided with redis cache. Running the application and the tests is done follows:
+
+- **docker-compose up**: Starts and executes the tests in development environment. 
+- Moreover, a **GitHub workflow** file has also been written thjat tests the app in the remote repo in each **push**.
